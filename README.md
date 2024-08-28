@@ -138,11 +138,41 @@ Below I have created a Viability Analysis of the various features I intend to ad
 
 #### Guest
 
-| # | Feature             | Importance | Viability |
-|---|---------------------|------------|-----------|
-| 1 | Submit Contact Form | 3          | 5         |
-| 2 | Register            | 5          | 5         |
-| 3 | Login               | 5          | 5         |
+| #  | Feature                          | Importance | Viability |
+|----|----------------------------------|------------|-----------|
+| 1  | Submit Contact Form              | 3          | 5         |
+| 2  | Register                         | 5          | 5         |
+| 3  | Login                            | 5          | 5         |
+
+#### Registered User
+
+| #  | Feature                          | Importance | Viability |
+|----|----------------------------------|------------|-----------|
+| 1  | Submit Contact Form              | 3          | 5         |
+| 2  | Login                            | 5          | 5         |
+| 3  | Logout                           | 5          | 5         |
+| 4  | Request Quote                    | 4          | 4         |
+| 5  | Accept Quote                     | 4          | 5         |
+| 6  | Decline Quote                    | 3          | 5         |
+| 7  | View Project Status              | 3          | 5         |
+| 8  | Add Comment to project           | 4          | 4         |
+| 9  | Cancel Project                   | 3          | 5         |
+| 10 | Add Service                      | 3          | 4         |
+| 11 | Pay balance                      | 5          | 5         |
+
+#### Admin
+
+| #  | Feature                          | Importance | Viability |
+|----|----------------------------------|------------|-----------|
+| 1  | Login                            | 5          | 5         |
+| 2  | Logout                           | 5          | 5         |
+| 3  | View Contact Form Submissions    | 4          | 5         |
+| 4  | View Project Details             | 5          | 5         |
+| 5  | Edit Project Details             | 5          | 5         |
+| 6  | Propose Quote                    | 5          | 5         |
+| 7  | Add comment to project           | 5          | 5         |
+| 8  | Cancel Project                   | 5          | 5         |
+| 9  | Bill Client                      | 5          | 5         |
 
 # Structure
 
