@@ -198,6 +198,12 @@ Finally, the content displayed on the main area of the website will be editable 
 
 ## Database Schema
 
+Pixel it runs from a single Database containing multiple tables. Only users with sufficient privileges can perform CRUD functionality and such functionality will vary per user depending on their role.
+
+The diagram below shows the Entity Relationship Diagram for the Database Tables.
+
+![ERD](docs/img/erd/erd.png)
+
 # Skeleton
 
 ## Wireframes
