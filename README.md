@@ -178,6 +178,12 @@ Below I have created a Viability Analysis of the various features I intend to ad
 
 ## Topology
 
+The website will have three main sections, the website itself, the admin panel for controlling the content of the website and the Customer Service Portal which will only vary slightly in appearance and functionality depending on the access roles of the current user.
+
+The main website topology will be as follows:
+
+![Website Topology](docs/img/topology/main-topo.png)
+
 ## Database Schema
 
 # Skeleton
@@ -201,6 +207,9 @@ Below I have created a Viability Analysis of the various features I intend to ad
 ## Error Handling
 
 # Technologies Used
+
+- [Octopus.do](https://octopus.do/)
+  - Used for creating site topology map
 
 # Future Implementations
 
