@@ -184,6 +184,18 @@ The main website topology will be as follows:
 
 ![Website Topology](docs/img/topology/main-topo.png)
 
+The blog article pages will be dynamically rendered using database queries using the article slug as an identifier.
+
+Upon logging the user will be able to use the Navigation Menu to access the Customer Portal portion of the Website, offering the following Topology:
+
+![CSP Topology](docs/img/topology/csp-topo.png)
+
+Again, the individual project page will be a single page with dynamically generated content using the project ID as an identifier.
+
+Finally, the content displayed on the main area of the website will be editable by the admins using the content management portion of the website, allowing for minor changes without having to directly edit code, to access this an admin will have a link in the navigation menu to access the Content Manageent System, offering the following Topology:
+
+![CMS Topo](docs/img/topology/cms-topo.png)
+
 ## Database Schema
 
 # Skeleton
