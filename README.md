@@ -13,6 +13,7 @@ Pixel It is built using Django, Python, JavaScript and various frameworks as doc
 - [Project Overview](#project-overview)
 - [UX Development](#ux-development)
   - [Strategy](#strategy)
+    - [problems](#problems)
     - [Project Goals](#project-goals)
     - [User Demographic](#user-demographic)
     - [User Stories](#user-stories)
@@ -46,13 +47,102 @@ Pixel It is built using Django, Python, JavaScript and various frameworks as doc
 
 ## Strategy
 
+The goal of Pixel It is to create a viable low cost entry point to small to medium enterprises to establish and online presence. While researching online I came across [this](https://clutch.co/web-developers) website, albeit with an American bias but regional results returned comparitive costs, outlining estimated costs for website development.
+
+While I'm sure the costs associated here are reasonable for their services, I feel that small to medium enterprises do not warrant the complex, highly functional websites that these agencies deliver for that price.
+
+Pixel It takes a different approach by developing a website that grows with your business, built on Django, a Pixel It wbsite is able to start life as a small brochure website if that is all that is required and is able to elegantly evolve with the clients business to include the functionality of a full Client Relationship Management application.
+
+Pixel It also makes it extremely easy and convenient for the client to manage their own services through the customer service portal of their website, allowing them to add or remove subscription based services, request and accept quotes for additional development tasks to their website, approve proposals and pay any balances due through their own account management section of the website.
+
+### Problems
+
+Ultimately, the goal of Pixel It is to address these fundamental barriers faced by small to medium enterprises whether they are new start ups or existing companies looking to refresh their online presence.
+
+- Cost
+  - As evidenced above, the cost of building a website can be very prohibitive. Many small companies do not have the free capital to be able to invest so heavily into their website during the early days. The result of this is that they often pay for a budget website or they use a WYSIWYG online website builder.
+  The outcome for either of these scenarios is often the same, a website that is poorly built, poorly optimised and doesn't fit their needs.
+
+- Trust
+  - Their are many anecdotal horror stories circulating where a developer or agency overly exaggerates their competencies with any given tech stack leaving the client with a website that poorly represents them or in some cases the website is left unfinished.
+
+- Clarity
+  - Many web developers or agencies often leave their clients feeling mislead with project overuns or quotes that end up grossly inaccurate. Alongside this, a client can be left for weeks or even months at times with no idea of how their website is progressing.
+
 ### Project Goals
+
+Pixel It intends to address the issues above with a different approach to building a website. By building the website to scale with the growth of the company it reduces the up front cost demanded of the client. This also reduces the risk taken by the client and therefore increases trust as they can see the outcome of their previous (smaller) investment before committing to investing further into their website and the customer service portal built into Pixel It's website allows the client to see and manage their project online further increasing trust by seeing the progress made on their website.
 
 ### User Demographic
 
+The primary demographic targetted by Pixel It will be:
+
+- Small &amp; medium enterprises
+  - Start ups
+  - Existing companies looking for a digital refresh
+  - Ecommerce stores
+  - SAAS services looking to outsource their website development
+- Hobbyists
+  - Individuals who need/want a website for their personal projects but don't want to use WYSIWYG editors
+
 ### User Stories
 
+#### First Time Visitor Goals
+
+As a first time visitor I want to be able to:
+
+- Immediately understand the purpose of the website
+- Easily find the services offered
+- Browse information related to the history of the company
+- Find information on the brand identity
+- Easily find contact information
+
+#### Returning Visitor Goals
+
+As a returning visitor I want to be able to:
+
+- Be able to find further information about specific services I may be interested in
+- Submit a query to the site owner requesting further information or to generate a lead
+- register for an account or log in to my existing account
+
+#### Registered User Goals
+
+As a registered user I want to be able to:
+
+- Edit my profile and contact information
+- Request a service
+- Approve a proposal
+- Request a modification to a proposal
+- Message the project Manager at Pixel It
+- Check the current status of a project in progress
+- Pay outstanding balances
+- Delete my account
+
+#### Site Admin
+
+As a site Admin I want to be able to:
+
+- Use the admin panel of the website to edit information displayed on the website
+- Use the customer Service portal to view information about ongoing projects
+- Use the customer Service Portal to update project information
+- Use the Customer Service Portal to communicate with a client
+
 ### Scope
+
+The functionality of the website will greatly vary depending on the provileges granted to the users account. The three main categories of a registered user will be:
+  - Guest
+  - Client
+  - Admin
+
+Below I have created a Viability Analysis of the various features I intend to add to the website dependant on the users account roles that have been granted.
+
+#### Guest
+
+| # | Feature             | Importance | Viability |
+|---|---------------------|------------|-----------|
+| 1 | Submit Contact Form | 3          | 5         |
+| 2 | Register            | 5          | 5         |
+| 3 | Login               | 5          | 5         |
 
 # Structure
 
