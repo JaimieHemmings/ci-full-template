@@ -208,6 +208,12 @@ The diagram below shows the Entity Relationship Diagram for the Database Tables.
 
 ## Wireframes
 
+Wireframes were created using [Balsamiq](https://balsamiq.com/)
+
+### Homepage
+
+![Homepage Wireframe](docs/img/wireframes/home.png)
+
 ## Colour Scheme
 
 ## Typography
@@ -228,6 +234,9 @@ The diagram below shows the Entity Relationship Diagram for the Database Tables.
 
 - [Octopus.do](https://octopus.do/)
   - Used for creating site topology map
+
+- [Balsamiq](https://balsamiq.com/)
+  - Used for creating wireframes
 
 # Future Implementations
 
