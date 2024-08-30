@@ -254,6 +254,15 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/)
 
 ## Content
 
+- [http://meyerweb.com/eric/tools/css/reset/](Meyer Web)
+  - Used for a CSS Reset boilerplate
+
+- [https://codepen.io/tmrDevelops/pen/GorGjW](Codepen Canvas Example)
+  - Used for the background animation effect used across multiple pages of the website
+
 ## Media
+
+- [www.unsplash.com](https://unsplash.com/)
+  - Used for various stock photography used across the site
 
 ## Acknowledgments
