@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Home{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
   <div class="row">
@@ -14,37 +19,40 @@
   <div class="container">
     <div class="row">
       <h1><span>SCALABLE</span><span>SOFTWARE</span><span>SOLUTIONS</span></h1>
-      <p>Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes. Our team of experienced developers can help you build custom software that meets your unique needs and helps you achieve your business goals.</p>
+      <p>Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.</p>
     </div>
   </div>
 </div>
 <div class="container-fluid services-summary">
   <div class="container">
     <div class="row">
-      <h2>Our Services</h2>
+      <h2 class="title">Our <span>Services</span></h2>
     </div>
-    <div class="row">
+    <div class="row service">
       <div class="col-6">
         <h3>Web Design &amp; Development</h3>
         <p>Our team of experienced web developers can help you create a custom website that meets your unique needs and helps you achieve your business goals.</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
       </div>
       <div class="col-6">
-        image here
+        <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
       </div>
     </div>
-    <div class="row">
+    <div class="row service">
       <div class="col-6">
         <h3>Branding</h3>
         <p>Our team of experienced designers can help you create a custom brand that reflects your unique identity and helps you stand out from the competition.</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
       </div>
       <div class="col-6">
         image here
       </div>
     </div>
-    <div class="row">
+    <div class="row service">
       <div class="col-6">
         <h3>SEO</h3>
         <p>Our team of experienced SEO experts can help you optimize your website for search engines and improve your online visibility.</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
       </div>
       <div class="col-6">
         image here
