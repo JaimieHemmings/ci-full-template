@@ -9,8 +9,27 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   Global Styles
 */
 
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,900&family=Rubik+Mono+One&display=swap');
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, a, a.btn {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .canv-container {
@@ -25,13 +44,13 @@ html {
 }
 
 .canv-container:after {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.6);
   z-index: 2;
 
 }
@@ -69,6 +88,9 @@ h2.title {
   h1 {
     font-size: 7rem;
     color: #fff;
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
     
     span {
       display: block;
