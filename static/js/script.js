@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Toggle Menu Icon
   const navButton = document.getElementById('menu-toggle');
-  navButton.addEventListener('click',()=>{navButton.classList.toggle('active')})
+  const menu = document.getElementById('menu-container');
+  navButton.addEventListener(
+    'click',()=>{
+      menu.classList.toggle('hidden');
+      navButton.classList.toggle('active');
+    }
+  );
 
 });

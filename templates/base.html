@@ -36,7 +36,7 @@
 </head>
   <body>
 
-    <nav class="fixed-top container-fluid">
+    <nav class="fixed-top container-fluid morphic">
       <div class="container">
         <div class="row">
           <div class="col-6 my-auto py-1 py-lg-0">
@@ -45,7 +45,7 @@
               Pixel It
             </a>
           </div>
-          <div class="col-6 my-auto py-1 py-lg-0">
+          <div class="col-6 my-auto py-1 py-lg-0 position-relative">
             <button class="hamb" aria-label="Open Menu" id="menu-toggle">
               <span class="sr-only">Open Menu</span>
               <svg class="ham" viewBox="0 0 100 100">
@@ -54,7 +54,7 @@
                 <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
               </svg>
             </button>
-            <ul>
+            <ul id="menu-container" class="hidden morphic">
               {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                   <li><a href="{% url 'admin:index' %}">Admin</a></li>
