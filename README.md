@@ -238,6 +238,10 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/)
 - [Balsamiq](https://balsamiq.com/)
   - Used for creating wireframes
 
+- [Stripe Mesh Gradient](https://gist.github.com/jordienr/64bcf75f8b08641f205bd6a1a0d4ce1d)
+  - Used fot the animated background implemented across multiple pages
+
+
 # Future Implementations
 
 # Testing
@@ -256,9 +260,6 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/)
 
 - [http://meyerweb.com/eric/tools/css/reset/](Meyer Web)
   - Used for a CSS Reset boilerplate
-
-- [https://codepen.io/tmrDevelops/pen/bpLPxo](Codepen Canvas Example)
-  - Used for the background animation effect used across multiple pages of the website
 
 ## Media
 
