@@ -78,6 +78,18 @@ h2.title {
   font-size: 2rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /*
   Navbar Styles
 */
@@ -96,6 +108,60 @@ a.logo {
   color: var(--midnight-blue);
   text-decoration: none;
   padding: 5px 15px;
+}
+
+button.hamb {
+  color: var(--midnight-blue);
+  position: relative;
+  margin-right: -.625rem;
+  border-width: 0px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.hamb .ham {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.hamb .ham {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    transition-duration: .3s;
+}
+.hamb .ham .top {
+    stroke-dasharray: 40 160;
+}
+.hamb .ham .middle {
+    transform-origin: 50%;
+    stroke-dasharray: 40 142;
+}
+.hamb .ham .bottom {
+    transform-origin: 50%;
+    stroke-dasharray: 40 85;
+}
+.hamb .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 5;
+    transition-duration: .3s;
+    stroke-linecap: round;
+}
+.hamb.active svg {
+    --tw-rotate: 45deg;
+    transform: rotate(var(--tw-rotate));
+}
+.hamb.active svg .top {
+    stroke-dashoffset: -64px;
+}
+.hamb.active svg .middle {
+    --tw-rotate: 90deg;
+    transform: rotate(var(--tw-rotate));
+}
+.hamb.active svg .bottom {
+    stroke-dashoffset: -64px;
 }
  
 
@@ -132,7 +198,7 @@ a.logo {
       }
   
       .letter:hover {
-        transform: translateY(-40px) rotate(-25deg);
+        transform: translateY(-40px) rotate(-25deg) scale(1.1);
       }
     }
   }

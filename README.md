@@ -258,8 +258,11 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/)
 
 ## Content
 
-- [http://meyerweb.com/eric/tools/css/reset/](Meyer Web)
+- [Meyer Web](http://meyerweb.com/eric/tools/css/reset/)
   - Used for a CSS Reset boilerplate
+
+= [Codepen](https://codepen.io/tristram/pen/QWJRxdW)
+  - Menu button svg animation
 
 ## Media
 

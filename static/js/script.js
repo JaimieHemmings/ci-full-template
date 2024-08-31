@@ -15,4 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Toggle Menu Icon
+  const navButton = document.getElementById('menu-toggle');
+  navButton.addEventListener('click',()=>{navButton.classList.toggle('active')})
+
 });
