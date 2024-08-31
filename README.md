@@ -261,8 +261,11 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/)
 - [Meyer Web](http://meyerweb.com/eric/tools/css/reset/)
   - Used for a CSS Reset boilerplate
 
-= [Codepen](https://codepen.io/tristram/pen/QWJRxdW)
+- [Codepen](https://codepen.io/tristram/pen/QWJRxdW)
   - Menu button svg animation
+
+- [Flowbite](https://flowbite.com/icons/)
+  - Various Icons used across the site
 
 ## Media
 
