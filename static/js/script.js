@@ -25,4 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   );
 
+  // Toggle FAQ answers
+
+  const faq = document.getElementById('faq-list');
+
+  faqItems = faq.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      faqItems.forEach((faqItem) => {
+        if (faqItem !== item) {
+          faqItem.classList.remove('active');
+        }
+      });
+      item.classList.toggle('active');
+    });
+  });
 });

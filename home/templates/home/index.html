@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container home-hero mt-5">
+<section class="container home-hero mt-5">
   <div class="row">
     <h1>
       <span class="hover-pop">SOLUTIONS</span>
@@ -24,8 +24,8 @@
     </h1>
     <p>Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.</p>
   </div>
-</div>
-<div class="container-fluid services-summary">
+</section>
+<section class="container-fluid services-summary">
   <div class="container">
     <div class="row">
       <h2 class="title">Our <span>Services</span></h2>
@@ -76,8 +76,8 @@
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid modus mt-5">
+</section>
+<section class="container-fluid modus mt-5">
   <div class="container">
     <div class="row">
       <h2>We craft tailored website solutions built on 3 core principles</h2>
@@ -88,7 +88,7 @@
           <div class="row">
             <div class="col col-md-6">
               <p>01/</p>
-              <h3>Beauty</h3>
+              <h3>Form</h3>
             </div>
             <div class="col col-md-6 modus-desc">
               <p>We love to develop websites that you can be proud of and brings your brand to life!</p>
@@ -110,7 +110,7 @@
           <div class="row">
             <div class="col col-md-6">
               <p>03/</p>
-              <h3>Impact</h3>
+              <h3>Finesse</h3>
             </div>
             <div class="col col-md-6 modus-desc">
               <p>Solutions that resonate with your customers and makes their life easier!</p>
@@ -120,5 +120,173 @@
       </ul>
     </div>
   </div>
-</div>
+</section>
+<section class="container-fluid dark-bg home-project">
+  <div class="container">
+    <div class="row pb-5 mb-5">
+      <div class="col col-md-6">
+        <h2>OUR <span>WORK</span></h2>
+      </div>
+      <div class="col col-md-6">
+        <p class="subtitle">
+          First impressions matter.
+        </p>
+        <p>Your website is often the first point of contact with a potential client. As the saying goes: you don't get a second chance at a first impression. Make sure you're putting your best foot forward.</p>
+      </div>
+    </div>
+    <div class="row">
+      <article class="col col-sm-12">
+        <a href="#" class="project-card" style="background-image: url('');">
+          <h3>Blog Title</h3><span class="project-date">2024</span>
+          <p class="project-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</p>
+        </a>
+      </article>
+      <article class="col col-sm-6">
+        <a href="#" class="project-card" style="background-image: url('');">
+          <h3>Blog Title</h3><span class="project-date">2024</span>
+          <p class="project-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</p>
+        </a>
+      </article>
+      <article class="col col-sm-6">
+        <a href="#" class="project-card" style="background-image: url('');">
+          <h3>Blog Title</h3><span class="project-date">2024</span>
+          <p class="project-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</p>
+        </a>
+      </article>
+      <article class="col col-sm-6">
+        <a href="#" class="project-card" style="background-image: url('');">
+          <h3>Blog Title</h3><span class="project-date">2024</span>
+          <p class="project-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</p>
+        </a>
+      </article>
+      <article class="col col-sm-6">
+        <a href="#" class="project-card" style="background-image: url('');">
+          <h3>Blog Title</h3><span class="project-date">2024</span>
+          <p class="project-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</p>
+        </a>
+      </article>
+    </div>
+    <div class="row">
+      <a href="#" class="btn btn-custom">
+        View All Projects
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+        </svg>  
+      </a>
+    </div>
+  </div>
+</section>
+<section class="dark-bg container-fluid articles-home pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <h2>Latest Articles</h2>
+        </div>
+        <div>
+          <a href="#" class="btn btn-custom">
+            View All Articles
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+            </svg>
+          </a>  
+        </div>
+      </div>
+      <div class="row">
+        <article class="col col-md-4 article-card">
+          <a href="#" class="article-link">
+            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
+            <span>Culture, Our Work</span>
+            <h2>How long does it take to design a website</h2>
+          </a>
+        </article>
+        <article class="col col-md-4 article-card">
+          <a href="#" class="article-link">
+            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
+            <span>Culture, Our Work</span>
+            <h2>How long does it take to design a website</h2>
+          </a>
+        </article>
+        <article class="col col-md-4 article-card">
+          <a href="#" class="article-link">
+            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
+            <span>Culture, Our Work</span>
+            <h2>How long does it take to design a website</h2>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="dark-bg container-fluid pt-5 pb-5 faq">
+  <div class="container">
+    <div class="row">
+      <h2 class="mb-5">FAQ's</h2>
+    </div>
+    <div class="row">
+      <ul id="faq-list">
+        <li class="faq-item">
+          <p class="faq-q">
+            How much does it cost to develop a website?
+          </p>
+          <div class="faq-a">
+            <p>
+              The cost of developing a website can vary depending on the complexity of the project. We offer a range of packages to suit different budgets, so get in touch to discuss your requirements. 
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <p class="faq-q">
+            How long does a project typically take?
+          </p>
+          <div class="faq-a">
+            <p>
+              The time it takes to complete a project can vary depending on the complexity of the project and the scope of work involved. We will work with you to establish a timeline that works for you and your business.
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <p class="faq-q">
+            Can you accomodate tight dealines?
+          </p>
+          <div class="faq-a">
+            <p>
+              We understand that sometimes you need things done quickly. We will do our best to accomodate your needs and work with you to establish a timeline that works for you.
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <p class="faq-q">
+            What ongoing support and maintenance do you offer?
+          </p>
+          <div class="faq-a">
+            <p>
+              We offer a range of support and maintenance packages to suit your needs. Get in touch to discuss your requirements and we will be happy to help.
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <p class="faq-q">
+            How do you handle revisions and feedback during the design process?
+          </p>
+          <div class="faq-a">
+            <p>
+              Our customer service portal allows you to submit feedback and revisions at any time during the design process. We will work with you to ensure that you are happy with the final product.
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <p class="faq-q">
+            Are there additional costs for digital marketing services integrated into web projects?
+          </p>
+          <div class="faq-a">
+            <p>
+              We offer a range of digital marketing services to help you promote your website and reach your target audience. Get in touch to discuss your requirements and we will be happy to help.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 {% endblock %}

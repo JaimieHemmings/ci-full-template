@@ -12,6 +12,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   Global Styles
 */
 
+.dark-bg {
+  background-color: var(--midnight-blue);
+  color: #fff;
+}
+
 html {
   scroll-behavior: smooth;
   --midnight-blue: #343434;
@@ -388,5 +393,241 @@ button.hamb {
     .modus-desc p {
       opacity: 1;
     }
+  }
+}
+
+/*
+  Home Project Cards Section
+*/
+
+.home-project {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  h2 {
+    padding-top: 50px;
+    color: #fff;
+    font-size: 8rem;
+    font-weight: 100;
+
+    span {
+      padding-left: 100px;
+    }
+  }
+
+  .subtitle {
+    font-size: 4rem;
+    line-height: 1.2;
+    padding-bottom: 25px;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    line-height: 1.2;
+  }
+
+  .project-card {
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h3 {
+      color: #fff;
+      padding-top: 15px;
+      padding-left: 15px;
+      font-weight: 100;
+      letter-spacing: 1px;
+      font-size: 1.2rem;
+      padding-bottom: 15px;
+      background-color: var(--midnight-blue);
+    }
+
+    .project-date {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--midnight-blue);
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 1.2rem;
+    }
+
+    .project-excerpt {
+      position: absolute;
+      top: 17px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.5s ease-in-out;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 15px;
+      padding-top: 10%;
+    }
+
+    &:hover .project-excerpt {
+      opacity: 1;
+    }
+  }
+
+  .btn-custom {
+    display: inline-block;
+    margin: 0 auto;
+    color: #fff;
+    border: 1px solid #fff;
+    max-width: 250px;
+    margin-top: 50px;
+
+    &:hover {
+      background-color: #fff;
+      color: var(--midnight-blue);
+
+      svg {
+        color: var(--midnight-blue);
+      }
+    }
+  }
+}
+
+/*
+  Home Articles Section
+*/
+
+.articles-home {
+  padding-top: 5rem;
+
+  h2 {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 100;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+
+  .article-link {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 0 80px 0 0;
+    text-decoration: none;
+    display: block;
+
+    h2 {
+      color: var(--midnight-blue);
+      font-size: 1.5rem;
+      font-weight: 100;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    span {
+      font-size: 1rem;
+      color: var(--midnight-blue);
+      padding-left: 15px;
+      margin-top: 15px;
+      display: block;
+    }
+  }
+
+  .btn-custom {
+    display: inline-block;
+    margin: 0 auto;
+    color: #fff;
+    border: 1px solid #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: var(--midnight-blue);
+
+      svg {
+        color: var(--midnight-blue);
+      }
+    }
+  }
+}
+
+.faq {
+  h2 {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 100;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding-bottom: 25px;
+
+    .faq-q {
+      position: relative;  
+      padding-left: 25px;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      max-width: 44ch;
+
+      &:before {
+        position: absolute;
+        content: "+";
+        font-family: "Source Sans 3", sans-serif;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .faq-a {
+      overflow: hidden;
+      clip: rect(auto, auto, 0, auto);
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      padding-left: 25px;
+      opacity: 0;
+
+      p {
+        max-width: 44ch;
+        line-height: 1.2;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .faq-item {
+    padding-bottom: 15px;
+    transition: padding-bottom 0.3s ease-in-out;
+
+  }
+
+  .faq-item.active {
+    padding-bottom: 200px;
+
+    .faq-a {
+      opacity: 1;
+      clip: rect(auto, auto, 10rem, auto);
+    }
+
+    .faq-q {
+
+      &:before {
+        transform: translate(0, -50%) rotate(45deg);
+      }
+    }
+
   }
 }
