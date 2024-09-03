@@ -29,16 +29,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const faq = document.getElementById('faq-list');
 
+  if(faq) {
   faqItems = faq.querySelectorAll('.faq-item');
 
-  faqItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      faqItems.forEach((faqItem) => {
-        if (faqItem !== item) {
-          faqItem.classList.remove('active');
-        }
+    faqItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        faqItems.forEach((faqItem) => {
+          if (faqItem !== item) {
+            faqItem.classList.remove('active');
+          }
+        });
+        item.classList.toggle('active');
       });
-      item.classList.toggle('active');
     });
+  }
+
+  
+  // Mission Statement Generator
+
+  const missionStatement = document.getElementById('mission-statement');
+  const btnMissionGenerator = document.getElementById('btn-mission-generator');
+
+  function numberGenerator() {
+   return Math.floor(Math.random() * mission_statements.length);
+  }
+    
+
+  btnMissionGenerator.addEventListener('click', () => {
+    missionStatement.innerText = mission_statements[numberGenerator()];
   });
 });
+
+const mission_statements = [
+  "Our mission is to create digital waves that have an impact. We believe that the best way to do this is by creating custom software that helps businesses grow and succeed. We take the time to understand your business and your goals so that we can create software that helps you achieve them.",
+  "Empowering businesses through innovative, scalable web applications that drive growth and deliver exceptional user experiences.",
+  "To craft high-performance web applications that seamlessly integrate with our clients’ vision, propelling their digital transformation.",
+  "Transforming ideas into powerful web solutions, ensuring our clients stay ahead in the digital landscape with cutting-edge technology.",
+  "Building robust, secure, and user-friendly web applications that enhance operational efficiency and customer engagement.",
+  "To lead the web development industry by delivering custom, future-ready applications that exceed client expectations and fuel business success.",
+  "Designing and developing web applications that simplify complexity, enabling our clients to focus on their core business objectives.",
+  "To be the trusted partner in web development, delivering intuitive, scalable solutions that help businesses thrive in a connected world.",
+  "Creating bespoke web applications that not only meet industry standards but set new benchmarks for innovation and user satisfaction.",
+  "Empowering our clients with state-of-the-art web applications that foster growth, efficiency, and a competitive edge in the market.",
+  "To deliver transformative web applications that blend creativity and technology, providing businesses with a seamless digital experience."
+];

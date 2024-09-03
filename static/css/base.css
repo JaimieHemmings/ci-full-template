@@ -17,6 +17,10 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   color: #fff;
 }
 
+.light-bg {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 html {
   scroll-behavior: smooth;
   --midnight-blue: #343434;
@@ -693,6 +697,7 @@ footer {
 
 .hero-sub {
   min-height: 50vh;
+  padding-bottom: 50px;
 
   h1 {
     position: relative;
@@ -716,17 +721,99 @@ footer {
 }
 
 .intro {
+  padding-top: 50px;
+
   h2 {
     font-size: 6rem;
     margin-bottom: 50px;
     padding-top: 50px;
 
     span {
+      display: block;
       padding-left: 100px;
     }
   }
 
   p {
     margin-bottom: 15px;
+  }
+}
+
+.values {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .values-title {
+    position: relative;
+
+    p {
+      position: absolute;
+      bottom: 15px;
+      text-align: right;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 6rem;
+      margin-bottom: 50px;
+      padding-top: 50px;
+      
+      span {
+        display: block;
+        padding-left: 100px;
+      }
+    }
+  }
+
+  .value-item {
+    margin: 15px 0;
+    padding: 25px 15px;
+
+    span {
+      font-size: 2rem;
+      color: var(--midnight-blue);
+      font-family: "Source Sans 3", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 100;
+      font-style: normal;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    h3 {
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 35px;
+      background-color: var(--color-1);
+      display: inline-block;
+    }
+
+    p {
+      line-height: 1.2;
+      font-size: 1.1rem;;
+    }
+  }
+}
+
+.mission {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h2 {
+    font-size: 6rem;
+    margin-bottom: 50px;
+
+    span {
+      padding-left: 50px;
+    }
+  }
+
+  p {
+    line-height: 1.2;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    min-height: calc(100% - 100px);
+    letter-spacing: 1px;
   }
 }
