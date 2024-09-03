@@ -631,3 +631,58 @@ button.hamb {
 
   }
 }
+
+/*
+  Footer Styles
+*/
+
+footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .footer-contact-email {
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 25px;
+    text-decoration: none;
+  }
+
+  a.logo {
+    font-size: 2rem;
+    border: 4px solid #fff;
+    font-weight: 900;
+    color: #fff;;
+    text-decoration: none;
+    padding: 5px 15px;
+    display: inline;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li  {
+      margin-bottom: 15px;
+    
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem;
+        padding-left: 30px;
+
+          svg {
+            margin-right: 0;
+            transition: all 0.3s ease-in-out;
+          }
+
+          &:hover {
+            svg {
+              margin-right: 25px;
+            }
+          
+          }
+      }
+    }
+  }
+}
