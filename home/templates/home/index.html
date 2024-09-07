@@ -193,27 +193,25 @@
         </div>
       </div>
       <div class="row">
-        <article class="col col-md-4 article-card">
-          <a href="#" class="article-link">
-            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
-            <span>Culture, Our Work</span>
-            <h2>How long does it take to design a website</h2>
-          </a>
-        </article>
-        <article class="col col-md-4 article-card">
-          <a href="#" class="article-link">
-            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
-            <span>Culture, Our Work</span>
-            <h2>How long does it take to design a website</h2>
-          </a>
-        </article>
-        <article class="col col-md-4 article-card">
-          <a href="#" class="article-link">
-            <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
-            <span>Culture, Our Work</span>
-            <h2>How long does it take to design a website</h2>
-          </a>
-        </article>
+
+        {% block posts %}
+          {% for post in posts %}
+
+          <article class="col col-md-4 article-card">
+            <a href="#" class="article-link">
+              <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
+              <span>
+                {% for category in post.categories.all %}
+                  {{ category.name}}
+                {% endfor %}
+              </span>
+              <h2>{{ post.title }}</h2>
+            </a>
+          </article>
+
+          {% endfor %}
+        {% endblock %}
+        
       </div>
     </div>
   </div>
