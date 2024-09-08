@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- Blog{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+  <header class="section-padding container">
+    <div class="row">
+      <div class="col-sm-6">
+        {% for category in post.categories.all %}
+          <span>{{ category.name }}</span>
+        {% endfor %}
+        <h1>{{ post.title }}</h1>
+      </div>
+      <div class="col-sm-6">
+        <p>{{ post.created_by }}</p>
+      </div>
+    </div>
+  </header>
+  <section>
+    <article class="container pb-5">
+      <div class="row">
+        <div class="col-12">
+          {{ post.body | linebreaks }}
+        </div>
+      </div>
+    </article>
+  </section>
+
+{% endblock %}
