@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from home.models import Post, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import ContactForm
 
 
 # Create your views here.
@@ -59,7 +61,11 @@ def article(request, slug):
     A view to return article page
     """
     post = Post.objects.get(slug=slug)
-    comments = Comment.objects.filter(post=post)
+    
+    # Get the post ID and grab all the comments related to it
+    post_id = post.id
+    comments = Comment.objects.filter(post=post_id)
+
     context = {
         'post': post,
         'comments': comments,
@@ -71,4 +77,12 @@ def contact(request):
     """
     A view to return contact page
     """
-    return render(request, 'home/contact.html')
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            pass
+            return HttpResponseRedirect('/contact/')
+    else:
+        form = ContactForm()
+
+    return render(request, 'home/contact.html', {form:form})

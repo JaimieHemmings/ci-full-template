@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
    return Math.floor(Math.random() * mission_statements.length);
   }
     
-
-  btnMissionGenerator.addEventListener('click', () => {
-    missionStatement.innerText = mission_statements[numberGenerator()];
-  });
+  if (btnMissionGenerator) {
+    btnMissionGenerator.addEventListener('click', () => {
+      missionStatement.innerText = mission_statements[numberGenerator()];
+    });
+  }
 });
 
 const mission_statements = [

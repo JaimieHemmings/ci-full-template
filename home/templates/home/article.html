@@ -29,13 +29,43 @@
     </div>
   </header>
   <section>
-    <article class="container pb-5">
+    <article class="container-fluid light-bg section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {{ post.body | linebreaks }}
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="container-fluid light-bg">
+    <div class="container">
+      {% for comment in comments %}
+        <div class="row">
+          <div class="col-12">
+            <h3>{{ comment.name }}</h3>
+            <p>{{ comment.body }}</p>
+          </div>
+        </div>
+      {% endfor  %}
+    </div>
+  </section>
+  <section class="container-fluid section-padding light-bg">
+    <div class="container">
+      {% if user.is_authenticated %}
+        <form action="{% url 'comment' post.slug %}" method="post">
+          {% csrf_token %}
+          <p>ADD A FORM HERE</p>
+          </form>
+      {% else %}
       <div class="row">
-        <div class="col-12">
-          {{ post.body | linebreaks }}
+        <div class="col-sm-12">
+          <p>Please <a href="{% url 'account_login' %}">Log In</a> to leave a comment</p>
         </div>
       </div>
-    </article>
+      {% endif %}
+    </div>
   </section>
 
 {% endblock %}

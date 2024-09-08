@@ -33,3 +33,13 @@ class Comment(models.Model):
 
   def __str__(self):
     return f"{self.author} on {self.post}"
+  
+  
+class Message(models.Model):
+  name = models.CharField(max_length=100)
+  email = models.EmailField()
+  message = models.TextField()
+  created_on = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return self.name
