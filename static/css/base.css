@@ -210,7 +210,7 @@ nav {
     font-size: calc(var(--base-font-size) * 1.5);
     font-family: "Syne", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    font-weight: 100;
     font-style: normal;
     padding: 5px 15px;
   }

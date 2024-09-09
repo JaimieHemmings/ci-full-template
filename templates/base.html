@@ -64,6 +64,8 @@
               {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                   <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                {% else %}
+                  <li><a href="{% url 'csp' %}">CSP</a></li>
                 {% endif %}
                 <li><a href="{% url 'account_logout' %}">Logout</a></li>
               {% else %}

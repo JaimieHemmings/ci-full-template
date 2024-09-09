@@ -1,0 +1,8 @@
+.csp-header {
+  padding-top: 100px;
+}
+
+.title-csp {
+  font-size: calc(var(--base-font-size) * 2);
+  margin-bottom: 15px;
+}

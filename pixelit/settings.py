@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'portfolio',
+    'CSP',
 ]
 
 MIDDLEWARE = [

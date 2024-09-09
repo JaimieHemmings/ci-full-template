@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- CSP{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/csp_style.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="cotainer-fluid light-bg section-padding">
+  <div class="container csp-header">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="section-title title-csp">Customer Service Portal</h1>
+        <p>The Customer Service Portal is your gateway to collaborating with us.</p>
+      </div>
+      <div class="col-sm-6">
+        <img src="{% static 'images/csp.png' %}" class="img-fluid" alt="Customer Service Portal">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid light-bg section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title title-csp">Open Projects</h2>
+        <p>View all your open projects and their status.</p>
+      </div>
+    </div>
+    <div class="row pt-5">
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table> 
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid light-bg">
+  <div class="container section-padding">
+    <div class="row">
+      <div class="col">
+        <h2 class="section-title title-csp">Create a New Project</h2>
+        <p>Start a new project with us.</p>
+      </div>
+    </div>
+    <div class="row">
+      <form>
+        <div class="form-group">
+          <label for="project-name">Project Name</label>
+          <input type="text" class="form-control" id="project-name" placeholder="Enter project name">
+        </div>
+        <div class="form-group">
+          <label for="project-description">Project Description</label>
+          <textarea class="form-control" id="project-description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom">
+          Submit<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
