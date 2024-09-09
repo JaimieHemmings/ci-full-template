@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from home.models import Post, Comment
+from home.models import Post, Comment, Message
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import ContactForm
 
@@ -77,12 +77,27 @@ def contact(request):
     """
     A view to return contact page
     """
+    context = {}
+    form = ContactForm()
+    context['form'] = form
+
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            pass
-            return HttpResponseRedirect('/contact/')
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            data = Message(name=name, email=email, message=message)
+            data.save()
+            return HttpResponseRedirect('/contact/message-success/')
     else:
         form = ContactForm()
 
-    return render(request, 'home/contact.html', {form:form})
+    return render(request, 'home/contact.html', context)
+
+
+def message_success(request):
+    """
+    A view to return message success page
+    """
+    return render(request, 'home/message-success.html')

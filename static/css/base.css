@@ -167,6 +167,16 @@ p, a, a.btn {
   }
 }
 
+.hero-small {
+  padding-top: 150px;
+  padding-bottom: 50px;
+
+  h1 {
+    font-size: calc(var(--base-font-size) * 6);
+    font-weight: 100;
+  }
+}
+
 /*
   Navbar Styles
 */
@@ -749,5 +759,44 @@ footer {
     margin-bottom: 50px;
     min-height: calc(100% - 100px);
     letter-spacing: 1px;
+  }
+}
+
+/*
+  Login/Register Page Styles
+*/
+
+.form-login, .form-register {
+
+  label {
+    margin-bottom: 15px;
+  }
+
+  input:not([type='checkbox']) {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  #id_password_helptext {
+    display: block;
+    padding-bottom: 30px;
+  }
+
+  ul {
+    margin-bottom: 30px;
   }
 }

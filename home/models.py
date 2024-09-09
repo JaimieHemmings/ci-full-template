@@ -36,6 +36,15 @@ class Comment(models.Model):
   
   
 class Message(models.Model):
+
+  INTEREST_CHOICES = (
+      ('design', 'Website Design'),
+      ('development', 'Website Development'),
+      ('ecommerce', 'E-Commerce'),
+      ('other', 'Other'),
+  )
+  
+  interest = models.CharField(max_length=100, choices=INTEREST_CHOICES)
   name = models.CharField(max_length=100)
   email = models.EmailField()
   message = models.TextField()
