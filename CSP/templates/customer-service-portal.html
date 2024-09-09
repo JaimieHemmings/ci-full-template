@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col-sm-6">
         <h1 class="section-title title-csp">Customer Service Portal</h1>
-        <p>The Customer Service Portal is your gateway to collaborating with us.</p>
+        <p>Welcome {{ user.username }}. The Customer Service Portal is your gateway to collaborating with us.</p>
       </div>
       <div class="col-sm-6">
         <img src="{% static 'images/csp.png' %}" class="img-fluid" alt="Customer Service Portal">
@@ -42,25 +42,31 @@
         <p>View all your open projects and their status.</p>
       </div>
     </div>
+
+    {% for project in projects %}
     <div class="row pt-5">
-      <table>
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table> 
+      <div class="col-sm-6">
+        <h3 class="section-title title-csp">{{ project.id }} - {{ project.title }}</h3>
+      </div>
+      <div class="col-sm-6">
+        <p>Status: {{ project.project_status }}</p>
+      </div>
+      <div class="col-sm-12 pt-2">
+        <p>{{ project.description }}</p>
+      </div>
     </div>
+    <div class="row mt-3">
+      <div class="col-sm-4">
+        <a href="#" class="btn btn-custom">
+          View Project
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+
   </div>
 </section>
 
@@ -83,7 +89,8 @@
           <textarea class="form-control" id="project-description" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-custom">
-          Submit<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          Submit
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
           </svg>
         </button>
