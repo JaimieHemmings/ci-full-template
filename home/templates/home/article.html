@@ -54,7 +54,8 @@
   <section class="container-fluid section-padding light-bg">
     <div class="container">
       {% if user.is_authenticated %}
-        <form action="{% url 'comment' post.slug %}" method="post">
+      <!-- % url 'comment' post.slug % -->
+        <form action="#" method="post">
           {% csrf_token %}
           <p>ADD A FORM HERE</p>
           </form>

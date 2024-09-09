@@ -141,7 +141,7 @@ p, a, a.btn {
 }
 
 .btn-custom {
-  font-size: 18px;
+  font-size: calc(var(--base-font-size) * 1.2);
   border: 2px solid var(--midnight-blue);
   border-radius: 36px;
   padding: 5px 20px;
@@ -207,7 +207,7 @@ nav {
   a {
     text-decoration: none;
     color: var(--midnight-blue);
-    font-size: 1.5rem;
+    font-size: calc(var(--base-font-size) * 1.5);
     font-family: "Syne", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
@@ -217,7 +217,7 @@ nav {
 }
 
 a.logo {
-  font-size: 1.5rem;
+  font-size: calc(var(--base-font-size) * 1.5);
   border: 4px solid var(--midnight-blue);
   font-weight: 900;
   color: var(--midnight-blue);
@@ -341,17 +341,19 @@ button.hamb {
     padding: 3rem;
 
     h3 {
+      font-size: calc(var(--base-font-size) * 3);
+      font-weight: 100;
       margin-bottom: 1.5rem;
       line-height: 1;
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: calc(var(--base-font-size) * 1.4);
       color: var(--midnight-blue);
       letter-spacing: 1px;
-      margin-top: 2rem;
+      margin-top: 1rem;
       line-height: 1.2;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -376,7 +378,7 @@ button.hamb {
   }
 
   p {
-    font-size: 2rem;
+    font-size: calc(var(--base-font-size) * 2);
   }
 
   li {
@@ -420,7 +422,7 @@ button.hamb {
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: calc(var(--base-font-size) * 1.4);
     color: #fff;
     letter-spacing: 1px;
     margin-top: 2rem;
@@ -446,7 +448,7 @@ button.hamb {
       padding-left: 15px;
       font-weight: 100;
       letter-spacing: 1px;
-      font-size: 1.2rem;
+      font-size: calc(var(--base-font-size) * 1.2);
       padding-bottom: 15px;
       background-color: var(--midnight-blue);
     }
@@ -458,7 +460,7 @@ button.hamb {
       background-color: var(--midnight-blue);
       color: #fff;
       padding: 5px 10px;
-      font-size: 1.2rem;
+      font-size: calc(var(--base-font-size) * 1.2);
     }
 
     .project-excerpt {
@@ -517,11 +519,30 @@ button.hamb {
     border-radius: 0 80px 0 0;
     text-decoration: none;
     display: block;
+    padding-bottom: 30px;
+
+    span {
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: var(--midnight-blue);
+      font-weight: 100;
+      text-transform: uppercase;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+    }
 
     h2 {
       color: var(--midnight-blue);
       margin-bottom: 15px;
       padding: 15px;
+      font-size: calc(var(--base-font-size) * 1.4);
     }
   }
 
@@ -559,9 +580,10 @@ button.hamb {
     .faq-q {
       position: relative;  
       padding-left: 25px;
-      font-size: 2rem;
+      font-size: calc(var(--base-font-size) * 2);
       margin-bottom: 25px;
       max-width: 44ch;
+      cursor: pointer;
 
       &:before {
         position: absolute;
@@ -585,7 +607,7 @@ button.hamb {
       p {
         max-width: 44ch;
         line-height: 1.2;
-        font-size: 2rem;
+        font-size: calc(var(--base-font-size) * 2);
       }
     }
   }
@@ -620,14 +642,14 @@ button.hamb {
 
 footer {
   .footer-contact-email {
-    font-size: 2rem;
+    font-size: calc(var(--base-font-size) * 2);
     color: #fff;
     padding-bottom: 25px;
     text-decoration: none;
   }
 
   a.logo {
-    font-size: 2rem;
+    font-size: calc(var(--base-font-size) * 2);
     border: 4px solid #fff;
     font-weight: 900;
     color: #fff;;
@@ -647,7 +669,7 @@ footer {
       a {
         color: #fff;
         text-decoration: none;
-        font-size: 2rem;
+        font-size: calc(var(--base-font-size) * 2);
         padding-left: 30px;
 
           svg {
@@ -671,27 +693,25 @@ footer {
 */
 
 .hero-sub {
-  min-height: 50vh;
-  padding-bottom: 50px;
+  padding-top: 150px;
+  padding-bottom: 100px;
 
   h1 {
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    font-size: 7rem;
-    margin-top: 5rem;
+    font-size: calc(var(--base-font-size) * 6);
     line-height: 1.2;
 
     span {
-      padding-left: 50%;
+      display: block;
+      padding-left: 50px;
     }
   }
 
   p {
+    text-align: center;
+    font-size: calc(var(--base-font-size) * 2);
     position: relative;
     top: 50%;
-    text-align: center;
-    font-size: 2rem;
+    transform: translate(0, -50%);
   }
 }
 
@@ -709,7 +729,7 @@ footer {
       position: absolute;
       bottom: 15px;
       text-align: right;
-      font-size: 2rem;
+      font-size: calc(var(--base-font-size) * 2);
       margin-bottom: 25px;
     }
 
@@ -724,7 +744,7 @@ footer {
     padding: 25px 15px;
 
     span {
-      font-size: 2rem;
+      font-size: calc(var(--base-font-size) * 2);
       color: var(--midnight-blue);
       font-family: "Source Sans 3", sans-serif;
       font-optical-sizing: auto;
@@ -755,7 +775,7 @@ footer {
 
   p {
     line-height: 1.2;
-    font-size: 1.1rem;
+    font-size: calc(var(--base-font-size) * 1.2);
     margin-bottom: 50px;
     min-height: calc(100% - 100px);
     letter-spacing: 1px;
@@ -777,7 +797,7 @@ footer {
     width: 100%;
     margin-bottom: 30px;width: 100%;
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: calc(var(--base-font-size));
     font-weight: 400;
     line-height: 1.5;
     color: #212529;

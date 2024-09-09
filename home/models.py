@@ -20,6 +20,7 @@ class Post(models.Model):
   modified_by = models.CharField(max_length=255)
   categories = models.ManyToManyField('Category', related_name='posts')
   slug = models.SlugField(max_length=255, unique=True)
+  cover_image = models.ImageField(upload_to='images/')
 
   def __str__(self):
     return self.title

@@ -35,6 +35,7 @@
           {% for post in posts %}
             <div class="col col-sm-4">
               <a href="{% url 'article' post.slug %}">
+                <img src="{{ post.cover_image.url }}" alt="{{ post.title}} image">
                 <h3>{{ post.title }}</h3>
                 {% for category in post.categories.all %}
                 <span>{{ category.name }}</span>
