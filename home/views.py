@@ -73,6 +73,13 @@ def article(request, slug):
     return render(request, 'home/article.html', context)
 
 
+def portfolio(request):
+    """
+    A view to return portfolio page
+    """
+    return render(request, 'home/portfolio.html')
+
+
 def contact(request):
     """
     A view to return contact page

@@ -1,25 +1,48 @@
-{% extends "account/base_manage.html" %}
-{% load allauth i18n %}
-{% block head_title %}
-    {% trans "Sign Out" %}
-{% endblock head_title %}
+{% extends "base.html" %}
+{% load allauth %}
+{% load static %}
+
+{% block extra_title %}- Sign Out{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
+
+<section class="container hero-small">
+    <div class="row text-center">
+        <h1 class="title">Sign Out</h1>
+    </div>
+</section>
+
+<section class="container-fluid light-bg section-padding">
+    <div class="container">
+        <p class="mb-3">Are you sure you want to sign out?</p>
+        {% url 'account_logout' as action_url %}
+        {% element form method="post" action=action_url no_visible_fields=True %}
         {% slot body %}
-            {% csrf_token %}
-            {{ redirect_field }}
+        {% csrf_token %}
+        {{ redirect_field }}
         {% endslot %}
         {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
+        
+                    
+        <button type="submit" class="btn btn-custom mt-5">
+            Sign Out
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+            </svg>
+        </button>
         {% endslot %}
-    {% endelement %}
-{% endblock content %}
+        {% endelement %}
+    </div>
+</section>
+{% endblock %}
