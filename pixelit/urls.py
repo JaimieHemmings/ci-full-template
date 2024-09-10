@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('customer-service-portal/', include('CSP.urls')),
+    path('control-panel/', include('controlpanel.urls')),
 ]

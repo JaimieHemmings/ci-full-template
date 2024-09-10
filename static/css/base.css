@@ -39,20 +39,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .title-text {
-  }
-  
-  .title-p {
-  }
-  
-  .section-title {
-  
-    span {
-    }
-  }
-}
-
 .section-padding {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -315,7 +301,7 @@ button.hamb {
         display: inline-block;
       }
   
-      .letter:hover {
+      .letter:hover, .letter.hover {
         transform: translateY(-10px) rotate(-15deg) scale(1.1);
       }
     }

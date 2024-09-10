@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from home.models import Category, Comment, Post
+from home.models import Category, Comment, Post, Message
 from portfolio.models import Portfolio
 from CSP.models import Project
 
@@ -20,9 +20,13 @@ class PortfolioAdmin(admin.ModelAdmin):
 class CSPAdmin(admin.ModelAdmin):
   pass
 
+class MessageAdmin(admin.ModelAdmin):
+  pass
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Portfolio, PortfolioAdmin)
 admin.site.register(Project, CSPAdmin)
+admin.site.register(Message, MessageAdmin)
 

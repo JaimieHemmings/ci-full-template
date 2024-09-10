@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- Control Panel{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cp_style.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="section-padding light-bg container-fluid">
+  <div class="container">
+    <div class="row pb-5">
+      <div class="col-sm-12 text-center">
+        <h1 class="title cp-title">Control <span>Panel</span></h1>
+        <p>Manage your website</p>
+      </div>
+    </div>
+    {% if unread_messages %}
+    <div class="row pb-5">
+      <div class="col-sm-12">
+        <h2 class="title pb-3">For your attention</h2>
+      </div>
+      <div class="col-sm-12">
+        <p class="pb-3">You have {{ unread_messages }} unread messages.</p>
+        <a href="{% url 'messages' %}" class="btn btn-custom">
+          View Messages
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+      <div class="container">
+        <div class="row mb-5">
+          <h2>What would you like to do?</h2>
+        </div>
+        <div class="row pb-5">
+          <div class="col-sm-4">
+            <a href="#" class="btn btn-custom">Manage Projects</a>
+          </div>
+          <div class="col-sm-4">
+            <a href="#" class="btn btn-custom">Manage Blog</a>
+          </div>
+          <div class="col-sm-4">
+            <a href="{% url 'messages' %}" class="btn btn-custom">View Messages</a>
+          </div>
+        </div>
+    </section>
+  </div>
+</section>
+
+{% endblock %}

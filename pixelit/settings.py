@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'portfolio',
     'CSP',
+    'controlpanel',
 ]
 
 MIDDLEWARE = [
