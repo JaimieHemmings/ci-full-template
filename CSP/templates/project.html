@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- CSP{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/csp_style.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid light-bg section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col pt-5">
+        <h2 class="section-title title-csp">{{ project.title }}</h2>
+        <p>{{ project.created_on|date:"M d, Y" }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5">
+    <div class="row pb-3">
+      <div class="col-sm-6">
+        {% if project.image %}
+          <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
+        {% endif %}
+      </div>
+      <div class="col-sm-6">
+        {% if project.github_link %}
+          <a href="{{ project.github_link }}" class="btn btn-custom">
+            View on GitHub
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+            </svg>
+          </a>
+        {% endif %}
+        {% if project.live_link %}
+          <a href="{{ project.live_link }}" class="btn btn-custom">
+            View Live
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+            </svg>
+          </a>
+        {% endif %}
+        <p>Status: {{ project.project_status }}</p>
+      </div>
+    </div>
+    <div class="row pb-3">
+      <div class="col-sm-12">
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="pb-3">Deposit Required: <span>£{{ project.deposit_amount }}</span></p>
+        {% if project.deposit_paid %}
+          <p>Deposit paid. :)</p>
+        {% else %}
+          <p>Deposit outstanding. :(</p>
+        {% endif %}
+      </div>
+      <div class="col-sm-6">
+        <p class="pb-3">Total amount due: <span>£{{ project.price_quoted }}</span></p>
+        {% if project.final_amount_paid %}
+          <p>Final amount paid. :)</p>
+        {% else %}
+          <p>Outstanding Balance: {{ project.final_amount_due }}</p>
+        {% endif %}        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container-fluid light-bg section-padding">
+  <div class="container">
+    <div class="row pb-5">
+      <div class="col">
+        <h2 class="section-title title-csp">Project Updates</h2>
+      </div>
+    </div>
+    {% if comments %}
+    {% for comment in comments %}
+      <div class="row pb-5">
+        <div class="col-sm-3">
+          <p>{{ comment.created_on|date:"M d, Y" }}</p>
+          <p>{{ comment.name }}</p>
+        </div>
+        <div class="col-sm-9">
+          <p>{{ comment.message}}</p>
+        </div>
+      </div>
+    {% endfor %}
+    {% else %}
+      <div class="row pb-5">
+        <div class="col">
+          <p>No updates yet</p>
+        </div>
+      </div>
+    {% endif %}    
+  </div>
+</section>
+<section class="container-fluid section-padding light-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col pb-3">
+        <h2 class="section-title title-csp">Add a comment</h2>
+        <p>Use the comment form to leave feedback or additional information for us to review</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <form action="{% url 'project' project.id %}" method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <button type="submit" value="Submit" class="btn btn-custom">
+            Submit
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

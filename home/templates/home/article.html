@@ -30,6 +30,13 @@
   </header>
   <section>
     <article class="container-fluid light-bg section-padding">
+      <div class="row pb-5">
+        <div class="col-12">
+          {% if post.cover_image %}
+            <img src="{{ post.cover_image.url }}" class="img-fluid" alt="{{ post.title }}">
+          {% endif %}
+        </div>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-12">
