@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
         span.innerText = letter;
         el.appendChild(span);
       });
-    });
     
-    // Every second animate a random letter
-    const letters = document.querySelectorAll('.letter');
-    setInterval(() => {
-      letters.forEach((letter) => {
-        letter.classList.remove('hover');
-      });
-      let random = Math.floor(Math.random() * letters.length);
-      letters[random].classList.toggle('hover');
-    }, 1000);
+      // Every second animate a random letter
+      const letters = document.querySelectorAll('.letter');
+      setInterval(() => {
+        letters.forEach((letter) => {
+          letter.classList.remove('hover');
+        });
+        let random = Math.floor(Math.random() * letters.length);
+        letters[random].classList.toggle('hover');
+      }, 1000);
+    });
   }
 
   // Toggle FAQ answers
