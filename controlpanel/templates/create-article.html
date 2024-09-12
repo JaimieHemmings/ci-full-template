@@ -23,6 +23,21 @@
 {% endblock %}
 
 {% block content %}
+{% if field_errors %}
+<section class="section-padding container-fluid light-bg">
+<div class="container">
+  {% for error in field_errors %}
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</section>
+{% endif %}
 <section class="container-fluid light-bg">
   <div class="container section-padding">
     <div class="row">
@@ -35,7 +50,7 @@
   <div class="container section-padding pt-3">
     <div class="row">
       <div class="col-sm-12">
-        <form method="POST" action="{% url 'create_article' %}">
+        <form method="POST" action="{% url 'create_article' %}" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form.as_p }}
           <div class="row pt-5">

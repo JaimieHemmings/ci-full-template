@@ -7,7 +7,8 @@ from CSP.forms import ProjectFeedbackForm
 from .forms import CreateArticleForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.utils.text import slugify
+from django.utils.safestring import mark_safe
+
 
 
 @login_required
@@ -193,38 +194,22 @@ def CreateArticle(request):
     # If user isn't superuser, redirect to home page
     if not request.user.is_superuser:
         return HttpResponseRedirect(reverse('home'))
+    
+    context = {}
 
-    form = CreateArticleForm()
-    context = {
-        'form': form,
-    }
-
+    form = CreateArticleForm(request.POST, request.FILES)
     if request.method == 'POST':
-        form = CreateArticleForm(request.POST, request.FILES)
         if form.is_valid():
-
-            title = form.cleaned_data['title']
-            body = form.cleaned_data['body']
-            created_by = request.user.username
-            modified_by = request.user.username
-            categories = form.cleaned_data['categories']
-            cover_image = form.cleaned_data['cover_image']
-            slug = slugify(title)
-
-            data = ProjectMessage(
-                title=title,
-                body=body,
-                created_by=created_by,
-                modified_by=modified_by,
-                categories=categories,
-                cover_image=cover_image,
-                slug=slug
-                )
-
-            data.save()
-
+            form.save()
             # flash notification message
             messages.success(request, 'Article Created')
             return redirect('article_view')
+        else:
+            context['field_errors'] = form.errors
+            messages.error(
+                request,
+                "The form data wasn't able to be saved. Please try again."
+                )
 
+    context['form'] = form
     return render(request, 'create-article.html', context)
