@@ -79,17 +79,23 @@
       </div>
     </nav>
 
-    {% if messages %}
-      <div class="message-container">
-      </div>
-    {% endif %}
-
     {% block page_header %}
     {% endblock %}
       
     <div class="container-fluid canv-container">
       <canvas id="canv"></canvas>
     </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <section class="message-container container-fluid light-bg">
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </section>
+    {% endfor %}
+    {% endif %}
 
     {% block content %}
     {% endblock %}

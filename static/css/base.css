@@ -16,6 +16,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   --base-font-size: 1rem;
 }
 
+.message-container {
+  padding-top: 100px;
+  padding-bottom: 15px;
+}
+
 .title-text {
   font-size: calc(var(--base-font-size) * 5);
 }
