@@ -57,11 +57,11 @@
         </p>
         {% endif %}
         <p class="mt-3">Project Value: {{ project.price_quoted }}</p>
-        <p class="mt-3">Deposit Paid: {{ project.deposit_paid }}</p>
+        <p class="mt-3">Deposit Paid: {% if project.deposit_paid == True %}Yes{% else %}No{% endif %}</p>
         <p class="mt-3">Deposit Amount: {{ project.deposit_amount }}</p>
         <p class="mt-3">Balance Due: {{ project.final_amount_due }}</p>
-        <p class="mt-3">Final Amount Paid: {{ project.final_amount_paid }}</p>
-        <p class="mt-3">Project Completed: {{ project.completed }}</p>
+        <p class="mt-3">Final Amount Paid: {% if project.final_paid == True %}Yes{% else %}No{% endif %}</p>
+        <p class="mt-3">Project Completed: {% if project.completed == True %}Yes{% else %}No{% endif %}</p>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from home.models import Message
+from home.models import Message, Post
 from CSP.models import Project, ProjectMessage
 from CSP.forms import ProjectFeedbackForm
 from django.contrib.auth.decorators import login_required
@@ -76,7 +76,7 @@ def DeleteMessage(request, message_id):
 
 
 @login_required
-def project_admin(request):
+def projectAdmin(request):
     """
     A view to return project admin page
     """
@@ -93,7 +93,7 @@ def project_admin(request):
 
 
 @login_required
-def project_view(request, project_id):
+def ProjectView(request, project_id):
     """
     A view to return project view page
     """
@@ -121,3 +121,39 @@ def project_view(request, project_id):
             return redirect('project_view', project_id)
 
     return render(request, 'project-view.html', context)
+
+@login_required
+def BlogView(request):
+    """
+    A view to return blog view page
+    """
+
+    # If user isn't superuser, redirect to home page
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse('home'))
+    
+    context = {}
+    blogPosts = Post.objects.all().order_by('-created_on')
+    context = {
+        'blogPosts': blogPosts,
+    }
+    
+    return render(request, 'blog-view.html', context)
+
+
+@login_required
+def DeleteBlogConfirm(request, blog_id):
+    """
+    A view to confirm article deletion
+    """
+    # If user isn't superuser, redirect to home page
+    if not request.user.is_superuser:
+        return HttpResponseRedirect(reverse('home'))
+
+    blog = Post.objects.get(id=blog_id)
+    # blog.delete()
+    context = {
+       'blog': blog,
+    }
+
+    return render(request, 'delete-blog-confirm.html', context)

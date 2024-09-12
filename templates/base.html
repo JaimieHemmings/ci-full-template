@@ -63,7 +63,7 @@
               <hr>
               {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <li><a href="{% url 'controlpanel' %}">Control Panel</a></li>
+                <li><a href="{% url 'control_panel' %}">Control Panel</a></li>
                   <li><a href="{% url 'admin:index' %}">Admin</a></li>
                 {% else %}
                   <li><a href="{% url 'csp' %}">CSP</a></li>

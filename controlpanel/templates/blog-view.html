@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}- Project Admin{% endblock %}
+{% block extra_title %}- Blog Admin{% endblock %}
 {% block meta %}
 <meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
 {% endblock %}
@@ -19,49 +19,44 @@
 {% endblock %}
 
 {% block content %}
-
-<section class="section-padding light-bg container-fluid">
-  <div class="container">
+<section class="container-fluid light-bg">
+  <div class="container section-padding pb-2">
     <div class="row pb-5">
       <div class="col-sm-12 text-center">
-        <h1 class="title cp-title">View Projects</h1>
-        <p>View and update open projects</p>
+        <h1 class="title cp-title">Manage Existing Posts</h1>
+        <p>Edit or Delete Your Blog Posts</p>
       </div>
     </div>
   </div>
-{% if projects %}
-  <div class="container pt-3">
-    {% for project in projects %}
+  <div class="container section-padding">
     <div class="row">
-      <div class="col-sm-4">     
-        <h2 class="section-title project-list-title">{{ project.title }}</h2>
+      <h2 class="pb-5">Manage Existing Posts</h2>
+    </div>
+    {% for post in blogPosts %}
+    <div class="row pb-3">
+      <div class="col-sm-4">
+        <p>{{ post.created_on|date:"M d, Y" }}</p>
+        <h2>{{ post.title }}</h1>
       </div>
       <div class="col-sm-4">
-        <p class="{{ project.project_status }} pb-2">{{ project.project_status }}</p>      
-      </div>
-      <div class="col-sm-4">
-        <p><a href="{% url 'project_view' project.id %}" class="btn btn-custom">
-          View Project
+        <a href="#" class="btn btn-custom">
+          Edit
           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
           </svg>
-        </a></p>     
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="{% url 'delete_blog_confirm' post.id %}" class="btn btn-custom">
+          Delete
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
       </div>
     </div>
     {% endfor %}
   </div>
 </section>
-{% else %}
-<section class="container-fluid section-padding light-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h2 class="title cp-title">No projects found</h1>
-        <p>Hound the sales team for more work!</p>
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
 
 {% endblock %}
