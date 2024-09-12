@@ -2,31 +2,22 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from .models import Project, ProjectMessage
 from .forms import ProjectFeedbackForm
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
+@login_required
 def CSP(request):
-    """ Customer Service Portal view """
-    # Check user is logged in
-    if not request.user.is_authenticated:
-        # Redirect user if not logged in
-        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    
+    """ Customer Service Portal view """    
     # Get the current users username
     username = request.user.username
-
     # Get all projects owned by user
     projects = Project.objects.filter(owner=username)
-
     return render(request, 'customer-service-portal.html', {'projects': projects})
 
 
+@login_required
 def project(request, project_id):
-    """ Project view """
-    # Check user is logged in
-    if not request.user.is_authenticated:
-        # Redirect user if not logged in
-        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    
+    """ Project view """    
     context = {}
     # Get the project with the given id
     project = Project.objects.get(id=project_id)

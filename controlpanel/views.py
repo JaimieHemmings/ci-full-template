@@ -4,9 +4,10 @@ from django.urls import reverse
 from home.models import Message
 from CSP.models import Project, ProjectMessage
 from CSP.forms import ProjectFeedbackForm
+from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
+@login_required
 def ControlPanel(request):
     """
     A view to return controlpanel page
@@ -23,6 +24,7 @@ def ControlPanel(request):
     return render(request, 'control-panel.html', context)
 
 
+@login_required
 def Messages(request):
     """
     A view to return messages page
@@ -39,6 +41,7 @@ def Messages(request):
     return render(request, 'messages.html', context)
 
 
+@login_required
 def ReadMessage(request, message_id):
     """
     A view to mark message as read
@@ -57,6 +60,7 @@ def ReadMessage(request, message_id):
     return redirect('messages')
 
 
+@login_required
 def DeleteMessage(request, message_id):
     """
     A view to delete message
@@ -71,6 +75,7 @@ def DeleteMessage(request, message_id):
     return redirect('messages')
 
 
+@login_required
 def project_admin(request):
     """
     A view to return project admin page
@@ -87,6 +92,7 @@ def project_admin(request):
     return render(request, 'projects-admin.html', context)
 
 
+@login_required
 def project_view(request, project_id):
     """
     A view to return project view page
