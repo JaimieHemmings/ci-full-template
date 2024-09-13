@@ -200,6 +200,8 @@ def CreateArticle(request):
     form = CreateArticleForm(request.POST, request.FILES)
     if request.method == 'POST':
         if form.is_valid():
+            # Create the slug from the title
+            form.instance.slug = form.instance.title.replace(' ', '-').lower()
             form.save()
             # flash notification message
             messages.success(request, 'Article Created')

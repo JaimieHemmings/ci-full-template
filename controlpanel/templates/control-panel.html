@@ -20,7 +20,7 @@
 
 {% block content %}
 
-<section class="section-padding light-bg container-fluid">
+<section class="section-padding light-bg container-fluid pb-2">
   <div class="container">
     <div class="row pb-5">
       <div class="col-sm-12 text-center">
@@ -44,25 +44,40 @@
       </div>
     </div>
     {% endif %}
-      <div class="container">
-        <div class="row mb-5">
-          <h2>What would you like to do?</h2>
-        </div>
-        <div class="row pb-5">
-          <div class="col-sm-4">
-            <a href="{% url 'project_admin' %}" class="btn btn-custom">Manage Projects</a>
-          </div>
-          <div class="col-sm-4">
-            <a href="{% url 'article_view' %}" class="btn btn-custom">Manage Blog</a>
-          </div>
-          <div class="col-sm-4">
-            <a href="{% url 'messages' %}" class="btn btn-custom">View Messages</a>
-          </div>
-          <div class="col-sm-4">
-            <a href="{% url 'create_article' %}" class="btn btn-custom">Create Article</a>
-          </div>
-        </div>
-    </section>
+    <div class="row cp-menu mb-5">
+      <div class="col-sm-6">        
+        <a href="{% url 'project_admin' %}" class="btn btn-custom mb-3">
+          Manage Projects
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+      <div class="col-sm-6">        
+        <a href="{% url 'article_view' %}" class="btn btn-custom mb-3">
+          Manage Blog
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+      <div class="col-sm-6">        
+        <a href="{% url 'messages' %}" class="btn btn-custom mb-3">
+          View Messages
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+      <div class="col-sm-6">        
+        <a href="{% url 'create_article' %}" class="btn btn-custom mb-3">
+          Create Article
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

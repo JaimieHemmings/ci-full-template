@@ -83,3 +83,28 @@
   padding-top: 15px;
   margin-bottom: 30px;
 }
+
+.article-submit-form {
+  label {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    margin-bottom: 15px;
+  }
+
+  input {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  input[type=checkbox] {
+    margin-top: 15px;
+  }
+
+  .errorlist {
+    display: none;
+  }
+}
