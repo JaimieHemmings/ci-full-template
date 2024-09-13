@@ -17,29 +17,27 @@
 {% block content %}
   <header class="section-padding container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12 pt-5">
         {% for category in post.categories.all %}
           <span>{{ category.name }}</span>
         {% endfor %}
-        <h1>{{ post.title }}</h1>
-      </div>
-      <div class="col-sm-6">
+        <h1 class="section-title">{{ post.title }}</h1>
         <p>{{ post.created_by }}</p>
       </div>
     </div>
   </header>
   <section>
     <article class="container-fluid light-bg section-padding">
-      <div class="row pb-5">
-        <div class="col-12">
-          {% if post.cover_image %}
-            <img src="{{ post.cover_image.url }}" class="img-fluid" alt="{{ post.title }}">
-          {% endif %}
-        </div>
-      </div>
       <div class="container">
-        <div class="row">
+        <div class="row pb-5">
           <div class="col-12">
+            {% if post.cover_image %}
+            <img src="{{ post.cover_image.url }}" class="img-fluid" alt="{{ post.title }}">
+            {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 article-body">
             {{ post.body | linebreaks }}
           </div>
         </div>

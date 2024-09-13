@@ -17,10 +17,10 @@
 {% block content %}
   <section class="container hero-sub">
     <div class="row">
-      <div class="col col-sm-6">
+      <div class="col-sm-6">
         <h1 class="title">Our <span>Blog</span></h1>
       </div>
-      <div class="col col-sm-6">
+      <div class="col-sm-6">
         <p>See what we've been doing!</p>
       </div>
     </div>
@@ -35,7 +35,7 @@
           {% for post in posts %}
             <div class="col col-sm-4">
               <a href="{% url 'article' post.slug %}">
-                <img src="{{ post.cover_image.url }}" alt="{{ post.title}} image">
+                <img src="{{ post.cover_image.url }}"class="img-fluid" alt="{{ post.title}} image">
                 <h3>{{ post.title }}</h3>
                 {% for category in post.categories.all %}
                 <span>{{ category.name }}</span>

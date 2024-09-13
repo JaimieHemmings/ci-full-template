@@ -12,4 +12,5 @@ urlpatterns = [
   path('article_view/delete_blog_confirm/<int:blog_id>/', views.DeleteArticleConfirm, name='delete_blog_confirm'),
   path('article_view/delete_article/<int:blog_id>/', views.DeleteArticle, name='delete_article'),
   path('create_article/', views.CreateArticle, name='create_article'),
+  path('edit_article/<int:blog_id>/', views.EditArticle, name='edit_article'),
 ]
