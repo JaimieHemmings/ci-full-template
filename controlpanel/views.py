@@ -253,4 +253,4 @@ def EditArticle(request, blog_id):
                 )
 
     context['form'] = form
-    return render(request, 'create-article.html', context)
+    return render(request, 'edit-article.html', context)
