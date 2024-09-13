@@ -5,13 +5,13 @@ from home.models import Message, Post
 from CSP.models import Project, ProjectMessage
 from CSP.forms import ProjectFeedbackForm
 from .forms import CreateArticleForm
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.text import slugify
 from django.utils import timezone
+from django.contrib.auth.decorators import user_passes_test
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def ControlPanel(request):
     """
     A view to return controlpanel page
@@ -28,7 +28,7 @@ def ControlPanel(request):
     return render(request, 'control-panel.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def Messages(request):
     """
     A view to return messages page
@@ -45,7 +45,7 @@ def Messages(request):
     return render(request, 'messages.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def ReadMessage(request, message_id):
     """
     A view to mark message as read
@@ -66,7 +66,7 @@ def ReadMessage(request, message_id):
     return redirect('messages')
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def DeleteMessage(request, message_id):
     """
     A view to delete message
@@ -81,7 +81,7 @@ def DeleteMessage(request, message_id):
     return redirect('messages')
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def projectAdmin(request):
     """
     A view to return project admin page
@@ -98,7 +98,7 @@ def projectAdmin(request):
     return render(request, 'projects-admin.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def ProjectView(request, project_id):
     """
     A view to return project view page
@@ -133,7 +133,7 @@ def ProjectView(request, project_id):
     return render(request, 'project-view.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def ArticleView(request):
     """
     A view to return blog view page
@@ -151,7 +151,7 @@ def ArticleView(request):
     return render(request, 'article-view.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def DeleteArticleConfirm(request, blog_id):
     """
     A view to confirm article deletion
@@ -169,7 +169,7 @@ def DeleteArticleConfirm(request, blog_id):
     return render(request, 'delete-article-confirm.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def DeleteArticle(request, blog_id):
     """
     A view to delete article
@@ -186,7 +186,7 @@ def DeleteArticle(request, blog_id):
     return redirect('article_view')
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def CreateArticle(request):
     """
     A view to create article
@@ -219,7 +219,7 @@ def CreateArticle(request):
     return render(request, 'create-article.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def EditArticle(request, blog_id):
     """
     A view to edit an article.
