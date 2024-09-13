@@ -33,10 +33,12 @@
       <h2 class="pb-5">Manage Existing Posts</h2>
     </div>
     {% for post in blogPosts %}
-    <div class="row pb-3 mb-3">
+    <div class="row pb-3 mb-2 mt-2">
       <div class="col-sm-4">
-        <p>{{ post.created_on|date:"M d, Y" }}</p>
-        <h2>{{ post.title }}</h1>
+        <p class="pb-1">{{ post.created_on|date:"M d, Y" }}</p>
+        <h2 class="pb-1">{{ post.title }}</h1>
+        <p class="pb-1">Author: {{  post.created_by }}</p>
+        <p class="pb-1">Last Edited: {{ post.last_modified|date:"M d, Y"  }} by {{ post.modified_by }}</p>
       </div>
       <div class="col-sm-4">
         <a href="{% url 'edit_article' post.id %}" class="btn btn-custom">

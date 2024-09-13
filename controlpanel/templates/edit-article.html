@@ -53,7 +53,7 @@
         <form
           class="article-submit-form"
           method="POST"
-          action="{% url 'create_article' %}"
+          action="{% url 'edit_article' article_id %}"
           enctype="multipart/form-data"
         >
           {% csrf_token %}

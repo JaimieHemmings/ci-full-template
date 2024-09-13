@@ -222,35 +222,41 @@ def CreateArticle(request):
 @login_required
 def EditArticle(request, blog_id):
     """
-    A view to edit article
+    A view to edit an article.
     """
-    # If user isn't superuser, redirect to home page
+    # If the user isn't a superuser, redirect to the home page
     if not request.user.is_superuser:
         return HttpResponseRedirect(reverse('home'))
 
     context = {}
+    # Retrieve the blog post by ID
     blog = Post.objects.get(id=blog_id)
+    # Instantiate the form with the existing blog instance
     form = CreateArticleForm(instance=blog)
 
     if request.method == 'POST':
+        # Re-instantiate the form with POST data and the existing blog instance
         form = CreateArticleForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
-            # Create additional entry points not in the form
+            # Update additional fields not in the form
             form.instance.modified_by = request.user.username
             form.instance.modified_on = timezone.now()
             form.instance.slug = slugify(form.instance.title)
-            # Save the form
+            # Save the form, which updates the existing blog instance
             form.save()
             
-            # flash notification message
+            # Flash a success notification message
             messages.success(request, 'Article Edited')
             return redirect('article_view')
         else:
+            # If the form is not valid, add form errors to the context
             context['field_errors'] = form.errors
             messages.error(
                 request,
                 "The form data wasn't able to be saved. Please try again."
-                )
+            )
 
+    # Add the form to the context
     context['form'] = form
+    context['article_id'] = blog_id
     return render(request, 'edit-article.html', context)
