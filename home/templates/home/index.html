@@ -18,12 +18,13 @@
 
   {% include 'home/partials/main-hero.html' %}
   {% include 'home/partials/services.html' %}
-  {% include 'home/partials/modus.html' %}
   {% if portfolio_posts %}
     {% include 'home/partials/portfolio-section.html' %}
   {% endif %}
+  {% include 'home/partials/modus.html' %}
   {% if blog_posts %}
     {% include 'home/partials/articles-section.html' %}
   {% endif %}
 {% include 'home/partials/faq.html' %}
+
 {% endblock %}

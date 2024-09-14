@@ -1,13 +1,14 @@
 {% load static %}
 
-<section class="container-fluid services-summary section-padding">
+<section class="container-fluid services-summary section-padding light-bg">
   <div class="container">
     <div class="row">
       <h2 class="section-title">Our <span>Services</span></h2>
     </div>
-    <div class="row service morphic">
-      <div class="col col-md-6">
-        <h3>Web Design &amp; Development</h3>
+    <div class="row service">
+      <div class="col-sm-12 col-md-4 mt-3 service-item">
+        <img src="{% static 'img/laptop-dev.jpg' %}" alt="laptop with development software running" class="img-fluid">
+        <h3>Web Dev</h3>
         <p>Our team of experienced web developers can help you create a custom website that meets your unique needs and helps you achieve your business goals.</p>
         <a href="#" class="btn btn-custom">
           Learn More
@@ -16,12 +17,8 @@
           </svg>          
         </a>
       </div>
-      <div class="col col-md-6">
-        <img src="{% static 'laptop-dev.jpg' %}" alt="laptop with development software running">
-      </div>
-    </div>
-    <div class="row service morphic">
-      <div class="col col-md-6">
+      <div class="col-sm-12 col-md-4 mt-3 service-item">
+        <img src="{% static 'img/laptop-dev.jpg' %}" alt="laptop with development software running" class="img-fluid">
         <h3>Branding</h3>
         <p>Our team of experienced designers can help you create a custom brand that reflects your unique identity and helps you stand out from the competition.</p>
         <a href="#" class="btn btn-custom">
@@ -31,12 +28,8 @@
           </svg>          
         </a>
       </div>
-      <div class="col col-md-6">
-        image here
-      </div>
-    </div>
-    <div class="row service morphic">
-      <div class="col col-md-6">
+      <div class="col-sm-12 col-md-4 mt-3 service-item">
+        <img src="{% static 'img/laptop-dev.jpg' %}" alt="laptop with development software running" class="img-fluid">
         <h3>SEO</h3>
         <p>Our team of experienced SEO experts can help you optimize your website for search engines and improve your online visibility.</p>
         <a href="#" class="btn btn-custom">
@@ -45,9 +38,6 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
           </svg>          
         </a>
-      </div>
-      <div class="col col-md-6">
-        image here
       </div>
     </div>
   </div>

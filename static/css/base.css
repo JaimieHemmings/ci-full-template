@@ -328,21 +328,44 @@ button.hamb {
     margin-top: 2rem;
     border-radius: 4rem;
     padding: 3rem;
+    justify-content: stretch;
 
-    h3 {
-      font-size: calc(var(--base-font-size) * 3);
-      font-weight: 100;
-      margin-bottom: 1.5rem;
-      line-height: 1;
-    }
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      border-left: 5px solid var(--midnight-blue);
+      margin-top: -3px;
+      padding-bottom: 15px;
 
-    p {
-      font-size: calc(var(--base-font-size) * 1.4);
-      color: var(--midnight-blue);
-      letter-spacing: 1px;
-      margin-top: 1rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
+      img {
+        border-radius: 0 75px 0 0;
+        padding-right: 15px;
+      }
+
+      h3 {
+        font-size: calc(var(--base-font-size) * 3);
+        font-weight: 100;
+        margin-bottom: 1rem;
+        line-height: 1;
+        padding-top: 15px;
+        padding-left: 15px;
+      }
+
+      p {
+        padding: 0 15px;
+        font-size: calc(var(--base-font-size) * 1.4);
+        color: var(--midnight-blue);
+        letter-spacing: 1px;
+        line-height: 1.2;
+        padding-bottom: 15px;
+      }
+
+      a {
+        margin: 0 auto 0 15px;
+        display: block;
+      }
     }
   }
 }
@@ -477,8 +500,7 @@ button.hamb {
     margin: 0 auto;
     color: #fff;
     border: 1px solid #fff;
-    max-width: 250px;
-    margin-top: 50px;
+    margin-top: 25px;
 
     &:hover {
       background-color: #fff;
