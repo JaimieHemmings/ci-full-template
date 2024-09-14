@@ -7,6 +7,7 @@ class Portfolio(models.Model):
 
   title = models.CharField(max_length=255)
   description = models.TextField()
+  excerpt = models.TextField()
   created_on = models.DateTimeField(auto_now_add=True)
   created_by = models.CharField(max_length=255)
   last_modified = models.DateTimeField(auto_now=True)

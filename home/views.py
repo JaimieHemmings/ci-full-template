@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from home.models import Post, Comment, Message
+from portfolio.models import Portfolio
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import ContactForm
 
@@ -10,11 +11,13 @@ def index(request):
     """
     A view to return index page
     """
-    """ Get 3 latest blog Posts"""
-    posts = Post.objects.all().order_by('-created_on')[:3]
-    context = {
-        'posts': posts,
-    }
+    context = {}
+    # Get 3 latest blog Posts
+    blog_posts = Post.objects.all().order_by('-created_on')[:3]
+    context['blog_posts'] = blog_posts
+    # Get 4 latest Portfolio Posts
+    portfolio_posts = Portfolio.objects.all().order_by('-created_on')[:4]
+    context['portfolio_posts'] = portfolio_posts
     return render(request, 'home/index.html', context)
 
 
@@ -29,7 +32,11 @@ def services(request):
     """
     A view to return services page
     """
-    return render(request, 'home/services.html')
+    context = {}
+    # Get 3 latest blog Posts
+    blog_posts = Post.objects.all().order_by('-created_on')[:3]
+    context['blog_posts'] = blog_posts
+    return render(request, 'home/services.html', context)
 
 
 def blog(request):
@@ -61,11 +68,9 @@ def article(request, slug):
     A view to return article page
     """
     post = Post.objects.get(slug=slug)
-    
     # Get the post ID and grab all the comments related to it
     post_id = post.id
     comments = Comment.objects.filter(post=post_id)
-
     context = {
         'post': post,
         'comments': comments,

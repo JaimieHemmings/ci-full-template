@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- Portfolio Managementgb{% endblock %}
+{% block meta %}
+<meta name="description" content="Pixel It is a software development company that specializes in creating scalable software solutions for businesses of all sizes.">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cp_style.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="section-padding light-bg container-fluid">
+  <div class="container">
+    <div class="row pb-5">
+      <div class="col-sm-12 text-center">
+        <h1 class="title cp-title mb-5">Portfolio Management</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      {% if portfolioItems %}
+        {% for item in portfolioItems %}
+      
+    <div class="row pb-3 mb-2 mt-2">
+      <div class="col-sm-4">
+        <p class="pb-1">{{ item.created_on|date:"M d, Y" }}</p>
+        <h2 class="pb-1">{{ item.title }}</h1>
+        <p class="pb-1">Author: {{  item.created_by }}</p>
+        <p class="pb-1">Last Edited: {{ item.last_modified|date:"M d, Y"  }} by {{ post.modified_by }}</p>
+      </div>
+      <div class="col-sm-4">
+        <a href="{% url 'edit_portfolio' item.id %}" class="btn btn-custom">
+          Edit
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="#" class="btn btn-custom">
+          Delete
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+      {% else %}
+        
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="text-center">No portfolio items found.</p>
+        </div>
+      </div>
+
+      {% endif %}
+  </div>
+</section>
+{% endblock %}
